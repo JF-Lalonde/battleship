@@ -21,4 +21,13 @@ class BattleshipMapTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_that_grid_contains_grid_square_class
+    new_map = BattleshipMap.new
+    actual = new_map.grid[0][1].class
+    expected = GridSquare
+
+    assert_equal expected, actual
+  end
+
 end
