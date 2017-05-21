@@ -14,6 +14,13 @@ class GridSquare
     GRID_OPTION[@hitbox]
   end
 
+  def hit
+    @hitbox = :hit
+  end
+
+  def miss
+    @hitbox = :miss
+  end
 end
 
 # new_square = GridSquare.new

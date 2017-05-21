@@ -23,11 +23,26 @@ class GridSquareTest < Minitest::Test
 
   def test_that_hitbox_status_can_change
     new_square = GridSquare.new
-    new_square.hitbox = :hit
+    new_square.hitbox = :ship_one
     actual = new_square.hitbox_status
-    expected = "H"
+    expected = "1"
 
     assert_equal expected, actual
   end
 
+  def test_that_hit_changes_hitbox
+    new_square = GridSquare.new
+    actual = new_square.hit
+    expected = :hit
+
+    assert_equal expected, actual
+  end
+
+  def test_that_miss_changes_hitbox
+    new_square = GridSquare.new
+    actual = new_square.miss
+    expected = :miss
+
+    assert_equal expected, actual
+  end
 end
