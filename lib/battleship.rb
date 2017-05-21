@@ -12,12 +12,16 @@
 # ComputerPlayer.new
 # HumanPlayer.new
 # EndSequence.new
+require './lib/start_sequence'
 
 class Battleship
   def initialize
-    StartSequence.new
+    @start_game = start_game
   end
 
   def start_game
+    start_game = StartSequence.new
   end
 end
+
+new_game = Battleship.new

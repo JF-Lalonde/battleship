@@ -11,5 +11,3 @@ class StartSequence
     print "(i)nstructions, or (q)uit?\n>"
   end
 end
-
-new_game = StartSequence.new

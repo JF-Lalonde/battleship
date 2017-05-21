@@ -7,11 +7,10 @@ require './lib/battleship'
 
 class BattleshipTest < Minitest::Test
   def test_if_start_sequence_is_initiated
-    skip
-    new_game = Battleship.new
-    actual   = new_game
-    expected = StartSequence.new
 
-    assert_equal expected, actual
+    new_game = Battleship.new
+    actual   = new_game.start_game  
+
+    assert_instance_of StartSequence, actual
   end
 end
