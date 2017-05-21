@@ -1,0 +1,2 @@
+class BattleshipMap
+end

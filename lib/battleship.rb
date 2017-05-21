@@ -8,8 +8,6 @@
 # 5. Game class initiated
 # 6. End sequence class initiated
 
-# BattleshipMap.new
-# ComputerPlayer.new
 # HumanPlayer.new
 # EndSequence.new
 require './lib/start_sequence'
