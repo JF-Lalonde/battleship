@@ -13,4 +13,12 @@ class BattleshipMapTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_that_coords_arrays_are_correct_size
+    new_map = BattleshipMap.new(5)
+    actual = new_map.x_coords.length
+    expected = 5
+    
+    assert_equal expected, actual
+  end
 end
