@@ -7,18 +7,18 @@ require './lib/battleship_map'
 
 class BattleshipMapTest < Minitest::Test
   def test_that_map_starts_at_correct_size
-    new_map = BattleshipMap.new(4)
+    new_map = BattleshipMap.new(5)
     actual = new_map.size
-    expected = 4
+    expected = 5
 
     assert_equal expected, actual
   end
 
-  def test_that_coords_arrays_are_correct_size
-    new_map = BattleshipMap.new(5)
-    actual = new_map.x_coords.length
-    expected = 5
-    
+  def test_that_grid_is_correct_size
+    new_map = BattleshipMap.new(3)
+    actual = new_map.grid.length
+    expected = 3
+
     assert_equal expected, actual
   end
 end
