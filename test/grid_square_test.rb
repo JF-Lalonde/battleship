@@ -6,9 +6,9 @@ require 'minitest/pride'
 require './lib/grid_square'
 
 class GridSquareTest < Minitest::Test
-  def test_that_hitbox_is_dot_by_default
+  def test_that_hitbox_is_empty_by_default
     new_square = GridSquare.new
-    expected = "."
+    expected = :empty
     actual = new_square.hitbox
 
     assert_equal expected, actual
@@ -20,4 +20,14 @@ class GridSquareTest < Minitest::Test
 
     assert_nil actual
   end
+
+  def test_that_hitbox_status_can_change
+    new_square = GridSquare.new
+    new_square.hitbox = :hit
+    actual = new_square.hitbox_status
+    expected = "H"
+
+    assert_equal expected, actual
+  end
+
 end

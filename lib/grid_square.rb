@@ -1,12 +1,17 @@
 class GridSquare
 
-  HitboxOptions = {empty: ".", hit: "H", miss: "M"}
+  GRID_OPTION = {empty: ".", hit: "H", miss: "M",
+                  ship_one: "1", ship_two: "2"}
 
-  attr_reader :hitbox, :ship
+  attr_accessor :hitbox, :ship
 
-  def initialize(hitbox = ".", ship = nil)
+  def initialize(hitbox = :empty, ship = nil)
     @hitbox = hitbox
     @ship = ship
+  end
+
+  def hitbox_status
+    GRID_OPTION[@hitbox]
   end
 
 end
