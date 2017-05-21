@@ -30,4 +30,12 @@ class BattleshipMapTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_that_axes_gets_formatted_for_output
+    new_map = BattleshipMap.new(2)
+    new_map.show_map
+    actual = new_map.x_axis
+    expected = [1, 2]
+
+    assert_equal expected, actual
+  end
 end
