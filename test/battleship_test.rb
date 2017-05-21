@@ -9,7 +9,7 @@ class BattleshipTest < Minitest::Test
   def test_if_start_sequence_is_initiated
 
     new_game = Battleship.new
-    actual   = new_game.start_game  
+    actual   = new_game.start_game
 
     assert_instance_of StartSequence, actual
   end
