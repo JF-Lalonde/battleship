@@ -13,4 +13,11 @@ class GridSquareTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_there_is_no_ship_by_default
+    new_square = GridSquare.new
+    actual = new_square.ship
+
+    assert_nil actual
+  end
 end

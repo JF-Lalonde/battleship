@@ -1,8 +1,14 @@
 class GridSquare
 
-  attr_reader :hitbox
+  HitboxOptions = {empty: ".", hit: "H", miss: "M"}
 
-  def initialize(hitbox = ".")
+  attr_reader :hitbox, :ship
+
+  def initialize(hitbox = ".", ship = nil)
     @hitbox = hitbox
+    @ship = ship
   end
+
 end
+
+# new_square = GridSquare.new
