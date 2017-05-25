@@ -14,18 +14,11 @@ class GridSquareTest < Minitest::Test
     assert_equal expected, actual
   end
 
-  def test_there_is_no_ship_by_default
-    new_square = GridSquare.new
-    actual = new_square.ship
-
-    assert_nil actual
-  end
-
   def test_that_hitbox_status_can_change
     new_square = GridSquare.new
-    new_square.hitbox = :ship_one
+    new_square.hitbox = :first
     actual = new_square.hitbox_status
-    expected = "1"
+    expected = "F"
 
     assert_equal expected, actual
   end
