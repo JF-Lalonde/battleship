@@ -7,6 +7,7 @@ require './lib/start_sequence'
 
 class StartSequenceTest < Minitest::Test
   def test_if_start_screen_is_initiated
+    skip
     new_game = StartSequence.new
     actual = new_game.start_screen
 
