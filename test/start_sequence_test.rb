@@ -15,7 +15,9 @@ class StartSequenceTest < Minitest::Test
 
   def test_if_player_input_calls_other_methods
     new_game = StartSequence.new
-    @choice = "p"
+    @player_input = "p"
+    actual = play
+    expected = "Let's start!"
   end
 
 end

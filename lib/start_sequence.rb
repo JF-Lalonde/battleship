@@ -1,6 +1,6 @@
-# Start sequence creates a screen with three options:
-#p, i, q and their corresponding outputs
 class StartSequence
+  attr_reader :player_input
+  
   def initialize
     @start_screen = start_screen
     @player_input = player_input
@@ -13,21 +13,26 @@ class StartSequence
   end
 
   def player_input
-    choice = gets.chomp
-    if choice == "p"
-      play
-    elsif choice == "i"
-      instructions
-    elsif choice == "q"
-      abort("End of BATTLESHIP game.")
-    else
-      puts "Wrong Input!"
+    valid = false
+    while valid != true
+      choice = gets.chomp
+      if choice == "p" || choice == "play"
+        play
+        valid = true
+      elsif choice == "i" || choice == "instructions"
+        instructions
+        print ">"
+      elsif choice == "q" || choice == "quit"
+        abort("End of BATTLESHIP game.")
+        valid = true
+      else
+        print "Wrong Input! \n>"
+      end
     end
   end
 
   def play
-    puts "Let's start!"
-    computer_player = ComputerPlayer.new
+    p "Let's start!"
   end
 
   def instructions
@@ -45,4 +50,3 @@ class StartSequence
     "
   end
 end
-new_game = StartSequence.new
