@@ -53,7 +53,7 @@ class Battleship
       coordinate = {}
       puts "Enter the start and end coordinates for the #{ship.type} ship: "
       input = gets.chomp.upcase
-      if valid !=true
+      if valid !=true && input.length == 5
         if input.split[0][0] == input.split[1][0]
           orientation = :horizontal
           if (ship.ship_length - 1) != (input.split[1][1].to_i - input.split[0][1].to_i)
@@ -72,8 +72,9 @@ class Battleship
           puts "Invalid Orientation!\n"
         end
       end
+    end
       valid = false
-      if valid != true
+      if valid != true && input.length == 5
         coordinate[:row] = @y_axis.index(input.split[0][0])
         coordinate[:column] = @x_axis.index(input.split[0][1])
         coordinate_y_2 = @y_axis.index(input.split[1][0])
@@ -93,7 +94,6 @@ class Battleship
            puts "Invalid ship placement!\n"
         end
       end
-    end
   end
 
   def deploy_comp_ships(player, ship)
