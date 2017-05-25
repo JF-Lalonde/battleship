@@ -24,13 +24,14 @@ class Player
   end
 
   def print_boards
-    print "\n\n"
+    puts "============================================="
+    puts "============================================="
     rows = ("A".."Z").to_a
     columns = (1..4).to_a
     columns.map!{|i| i.to_s}
-    puts "  " + columns.join(" ")
+    puts "                 " + columns.join(" ")
     @target_board.grid.each_with_index do |x, i|
-      print rows[i] + " "
+      print "               " + rows[i] + " "
       x.each do |square|
         print square.hitbox_status + " "
       end
@@ -42,14 +43,16 @@ class Player
     axis_y = ("A".."Z").to_a
     x_axis = (1..4).to_a
     @x_axis = x_axis.map!{|i| i.to_s}
-    puts "  " + @x_axis.join(" ")
+    puts "                 " + @x_axis.join(" ")
     @game_map.grid.each_with_index do |x, i|
       @y_axis << axis_y[i]
-      print axis_y[i] + " "
+      print "               " + axis_y[i] + " "
       x.each do |square|
         print square.hitbox_status + " "
       end
         print "\n"
     end
+    puts "============================================="
+    puts "============================================="
   end
 end
